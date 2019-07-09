@@ -1,4 +1,4 @@
-###主机名称修改
+### 主机名称修改
 
 - hostnamectl set-hostname <hostname>
 - reboot
