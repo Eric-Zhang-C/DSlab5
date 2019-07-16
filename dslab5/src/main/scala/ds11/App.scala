@@ -3,16 +3,17 @@ package ds11
 /**
  * @author ${user.name}
  */
-/*object App {
-  
+object App {
+
   def foo(x : Array[String]) = x.foldLeft("")((a,b) => a + b)
-  
+
   def main(args : Array[String]) {
     println( "Hello World!" )
     println("concat arguments = " + foo(args))
   }
 
-}*/
+}
+ /*
 import org.apache.log4j.Level
 import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
@@ -29,8 +30,8 @@ object App {
   def main(args: Array[String]): Unit = {
 
     // 减少日志输出
-    Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
-    Logger.getLogger("org.eclipse.jetty.server").setLevel(Level.OFF)
+    //Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
+    //Logger.getLogger("org.eclipse.jetty.server").setLevel(Level.OFF)
 
     val sparkConf = new SparkConf().setAppName("KafkaDirect").setMaster("local[2]")
 
@@ -40,7 +41,8 @@ object App {
     val topic = Set("wzw")
 
     // 制定Kafka的broker地址
-    val kafkaParams = Map[String, String]("metadata.broker.list" -> "10.0.0.53:9092")
+    //val kafkaParams = Map[String, String]("metadata.broker.list" -> "202.120.40.8:30570:9092")
+    val kafkaParams = Map[String, String]("metadata.broker.list" -> "10.0.0.54:9092")
 
     // 创建DStream，接受kafka数据irectStream[String, String, StringDecoder,StringDecoder](sparkStreaming, kafkaParams, topic)
     val kafkaStream = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](sparkStreaming, kafkaParams, topic)
@@ -97,3 +99,4 @@ object App {
     sparkStreaming.awaitTermination()
   }
 }
+*/
